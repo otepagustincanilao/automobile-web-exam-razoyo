@@ -1,8 +1,9 @@
 import axios from "axios";
 
-async function get_handler(req, res) {
+async function list_cars(req, res) {
   const resp = await axios.get("http://localhost:4000/api/v1/cars");
-  res.status(200).json({ data: resp.data });
+  const authToken = resp.headers.authorization;
+  res.status(200).json({ data: resp.data, auth_token: authToken });
 }
 
-export default get_handler;
+export default list_cars;

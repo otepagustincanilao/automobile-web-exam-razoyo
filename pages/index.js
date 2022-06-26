@@ -10,12 +10,13 @@ export default function Home() {
 
   setTimeout(function () {
     router.push("/cars");
-  }, 3000);
+  }, 500);
 
   return (
-    <div className="text-2xl mt-40 font-semibold text-center">
+    <div className="text-2xl mt-11 font-semibold text-center">
       <h1 className="text-2xl">Welcome to Auto Deal Website</h1>
       <Loader />
+   
     </div>
   );
 }
