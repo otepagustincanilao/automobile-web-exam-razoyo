@@ -1,7 +1,8 @@
 import axios from "axios";
 
 async function list_cars(req, res) {
-  const resp = await axios.get("http://localhost:4000/api/v1/cars");
+  console.log(req.query)
+  const resp = await axios.get(`http://localhost:4000/api/v1/cars?make=${req.query.make}`);
   const authToken = resp.headers.authorization;
   res.status(200).json({ data: resp.data, auth_token: authToken });
 }

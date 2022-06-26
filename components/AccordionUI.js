@@ -67,8 +67,6 @@ function AccordionUI({
     }
   };
 
-  console.log([price, currency])
-
   return (
     <>
       <div
