@@ -4,9 +4,14 @@ import AccordionUI from "./AccordionUI";
 const Accordion = () => {
   const [index, setIndex] = useState(false);
 
+  // axios call
+
   // car list data
   const cars = [
     {
+      id: "1",
+      img_url:
+        "https://d3ggoe3aghc7um.cloudfront.net/uploads/prices/348/002_348_1595675088386_000.jpg",
       make: "HONDA",
       model: "Civic",
       series: "Civic-SE2022",
@@ -18,9 +23,12 @@ const Accordion = () => {
       transmission: "Manual",
       fuel_type: "Gas",
       price: 1700000.5,
-      currency: "PHP",
+      currency: "₱",
     },
     {
+      id: "2",
+      img_url:
+        "https://imgcdn.zigwheels.ph/large/gallery/exterior/30/1943/toyota-vios-front-side-view-409037.jpg",
       make: "TOYOTA",
       model: "Vios",
       series: "Vios SE2021",
@@ -32,9 +40,12 @@ const Accordion = () => {
       transmission: "Manual",
       fuel_type: "Gas",
       price: 850000.5,
-      currency: "PHP",
+      currency: "₱",
     },
     {
+      id: "3",
+      img_url:
+        "https://d3ggoe3aghc7um.cloudfront.net/uploads/prices/348/002_348_1595675088386_000.jpg",
       make: "TOYOTA",
       model: "Fortuner",
       series: "Fortuner S2022",
@@ -46,25 +57,27 @@ const Accordion = () => {
       transmission: "Automatic",
       fuel_type: "Diesel",
       price: 2450000.5,
-      currency: "PHP",
+      currency: "₱",
     },
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center md:mt-32 md:mx-60 p-10 rounded-xl h-auto py-20 bg-gray-50">
+    <div className="flex flex-col justify-center items-center md:mt-32 md:mx-60 p-10 rounded-xl h-auto py-20 bg-gray-200">
       {cars.map((car) => {
         return (
           <AccordionUI
+            Id={car.id}
+            imgUrl={car.img_url}
             make={car.make}
             model={car.model}
             series={car.series}
             year={car.year}
             slug={car.slug}
-            seat_capacity={car.seat_capacity}
+            seatCapacity={car.seat_capacity}
             color={car.color}
-            miles_per_gallon={car.miles_per_gallon}
+            milesPerGallon={car.miles_per_gallon}
             transmission={car.transmission}
-            fuel_type={car.fuel_type}
+            fuelType={car.fuel_type}
             price={car.price}
             currency={car.currency}
             index={index}
